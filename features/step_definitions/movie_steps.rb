@@ -2,10 +2,14 @@
 
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
+  Movie.create!(movie)
+#print Movie.select(:title).where("title = ",movie[:title])
+#print Movie.all
+#print movie
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
   end
-  assert false, "Unimplmemented"
+#assert false, "Unimplmemented"
 end
 
 # Make sure that one string (regexp) occurs before or after another one
